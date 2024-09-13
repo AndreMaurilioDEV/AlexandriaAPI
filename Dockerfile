@@ -7,7 +7,6 @@ COPY mvnw pom.xml ./
 
 RUN ./mvnw clean package
 
-
 FROM eclipse-temurin:17-jre-jammy
 
 COPY --from=build-image /app/target/*.jar /app/app.jar
